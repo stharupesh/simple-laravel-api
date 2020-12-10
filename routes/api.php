@@ -28,5 +28,10 @@ Route::group(['namespace' => 'Api'], function () {
             Route::post('in-stock', 'GetCarsInStock')
                 ->name('api.car.in-stock');
         });
+
+        Route::group(['namespace' => 'Profile', 'prefix' => 'profile'], function () {
+            Route::get('get-details', 'GetDetails')
+                ->name('api.profile.get-details');
+        });
     });
 });
