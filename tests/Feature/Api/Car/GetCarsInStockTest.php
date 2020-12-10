@@ -3,11 +3,10 @@
 namespace Tests\Feature\Api\Car;
 
 use Tests\Feature\Api\TestCase;
-use Illuminate\Support\Facades\Bus;
 
 class GetCarsInStockTest extends TestCase
 {
-    public function testGetSportEvents()
+    public function testGetCarsInStock()
     {
         /**
          * Arrange
