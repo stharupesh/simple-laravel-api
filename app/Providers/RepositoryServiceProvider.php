@@ -27,5 +27,6 @@ class RepositoryServiceProvider extends ServiceProvider
          * singleton binding so that, there is only one instance throughout the application
          */
         $this->app->singleton('App\Repositories\Car\CarRepositoryInterface', 'App\Repositories\Car\CarRepository');
+        $this->app->singleton('App\Repositories\User\UserRepositoryInterface', 'App\Repositories\User\UserRepository');
     }
 }

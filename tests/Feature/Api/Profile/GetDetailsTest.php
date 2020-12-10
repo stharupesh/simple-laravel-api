@@ -30,7 +30,7 @@ class GetDetailsTest extends TestCase
       $response = $this->withHeaders([
          'Authorization' => 'Bearer ' . $token,
       ])
-      ->json('GET', route('api.profile.get'));
+      ->json('GET', route('api.profile.get-details'));
 
       /**
        * Assert
