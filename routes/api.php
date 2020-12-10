@@ -22,4 +22,11 @@ Route::group(['namespace' => 'Api'], function () {
             ->name('api.auth.logout')
             ->middleware('oauth:api');
     });
+
+    Route::group(['middleware' => 'oauth:api'], function () {
+        Route::group(['namespace' => 'Car', 'prefix' => 'car'], function () {
+            Route::post('in-stock', 'GetCarsInStock')
+                ->name('api.car.in-stock');
+        });
+    });
 });
