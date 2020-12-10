@@ -8,9 +8,8 @@ use Illuminate\Http\JsonResponse;
 use Log;
 
 /**
- * @group  Auth
- *
- * APIs for managing auth actions
+ * Class Logout
+ * @package App\Http\Controllers\Api\Auth
  */
 class Logout extends Controller
 {

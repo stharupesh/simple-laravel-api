@@ -8,6 +8,12 @@ use Illuminate\Database\Eloquent\Builder;
 
 class CarRepository implements CarRepositoryInterface
 {
+    /**
+     * @param $searchText
+     * @param $pageLimit
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+     * returns the cars which are in stock
+     */
     public function getCarsInStock($searchText, $pageLimit)
     {
         return Car::with('make', 'model')
