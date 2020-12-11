@@ -19,6 +19,7 @@ class Car extends JsonResource
         return [
             'id' => $this->id,
             'year' => $this->year,
+            'quantity' => $this->quantity,
             'make' => new MakeResource($this->make),
             'model' => new ModelResource($this->model)
         ];
