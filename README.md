@@ -17,5 +17,10 @@ To run tests
 
 To reset database and dummy data for testing run below command
 - php artisan test:prepare
+
+Default data includes dummy cars, makes, models and a user. Its credentials is shown below
+
+email:      user@example.test
+password:   password
  
 It runs \App\Console\Commands\TestPrepare::class command
