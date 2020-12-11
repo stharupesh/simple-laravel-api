@@ -2,8 +2,6 @@
 
 namespace App\Http\Resources\Car;
 
-use App\Http\Resources\Make\Make as MakeResource;
-use App\Http\Resources\Model\Model as ModelResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class Car extends JsonResource
@@ -20,8 +18,8 @@ class Car extends JsonResource
             'id' => $this->id,
             'year' => $this->year,
             'quantity' => $this->quantity,
-            'make' => new MakeResource($this->make),
-            'model' => new ModelResource($this->model)
+            'make_name' => $this->make_name,
+            'model_name' => $this->model_name
         ];
     }
 }

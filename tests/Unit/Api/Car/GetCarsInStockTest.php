@@ -69,4 +69,8 @@ class GetCarsInStockTest extends TestCase
          */
         $this->assertCount($expectedNumberOfCars, $result);
     }
+
+    /**
+     * other unit tests can be added such as check if each search filters works or not
+     */
 }

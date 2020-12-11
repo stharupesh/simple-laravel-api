@@ -15,6 +15,14 @@ class SearchTextParser implements ParserInterface
 
     public function parse(): string
     {
-        return $this->request->has('search') ? $this->request->input('search') : '';
+        if(!$this->request->has('search'))
+            return '';
+
+        $search = $this->request->input('search');
+
+        if($search === null)
+            return '';
+
+        return $search;
     }
 }

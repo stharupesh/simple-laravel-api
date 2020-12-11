@@ -16,19 +16,19 @@ class CarRepository implements CarRepositoryInterface
      */
     public function getCarsInStock($searchText, $pageLimit)
     {
-        return Car::with('make', 'model')
+        return Car::join('makes', 'makes.id', '=', 'cars.make_id')
+
+            ->join('models', 'models.id', '=', 'cars.model_id')
             ->where(function ($query) {
                 $query->where('quantity', '>', 0);
             })
             ->where(function ($query) use ($searchText) {
                 $query->where('year', $searchText)
-                    ->orWhereHas('make', function (Builder $query) use ($searchText) {
-                        $query->where('name', 'like', '%' . $searchText . '%');
-                    })
-                    ->orWhereHas('model', function (Builder $query) use ($searchText) {
-                        $query->where('name', 'like', '%' . $searchText . '%');
-                    });
+                    ->orWhere('quantity', $searchText)
+                    ->orWhere('makes.name', 'like', '%' . $searchText . '%')
+                    ->orWhere('models.name', 'like', '%' . $searchText . '%');
             })
+            ->select('cars.*', 'makes.name AS make_name', 'models.name AS model_name')
             ->paginate($pageLimit);
     }
 }
