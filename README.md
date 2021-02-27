@@ -12,7 +12,7 @@ To Setup project
 To run tests
 
 - add test_db.sqlite in database folder
-- add DB_TEST_DATABASE=database/test_db.sqlite in .env
+- add DB_TEST_DATABASE=./database/test_db.sqlite in .env
 - run ./vendor/bin/phpunit --testdox
 
 To reset database and dummy data for testing run below command
